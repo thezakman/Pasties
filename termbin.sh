@@ -25,4 +25,4 @@ else
 
 # ------------------------------# Exec
 
-echo -e "${amarelo}[>]Gerando o link...${SemCor}" ; nc termbin.com 9999 
+echo -e "${amarelo}[>]Gerando o link...${SemCor}" ; nc termbin.com 9999
