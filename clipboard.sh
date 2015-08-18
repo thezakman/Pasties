@@ -10,4 +10,3 @@
 # [>]Como usar: "cat arquivo | clipboard" ou "echo -e "teste" | clipboard"
 
 xsel --clipboard
-
