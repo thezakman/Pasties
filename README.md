@@ -1,3 +1,5 @@
 # Pasties
 #
-Script para me salvar tempo exportando code/text
+Scripts para me salvar tempo exportando code/text
+
+
