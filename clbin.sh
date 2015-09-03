@@ -15,11 +15,11 @@ SemCor='\033[0m' # Sem Cor
 
 # ---------------------------- # confirma se o netcat foi instalado na maquina
 
-if test -e /bin/netcat ; then
+if test -e /usr/bin/curl ; then
     echo "____________________" >&2
 else
-    echo "Dependencia faltando: apt-get install netcat" >&2      
-    apt-get install netcat -y
+    echo "Dependencia faltando: apt-get install curl" >&2      
+    apt-get install curl -y
     exit 1
     fi
 
