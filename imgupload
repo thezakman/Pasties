@@ -4,36 +4,29 @@
 # https://github.com/thezakman/Pasties
 
 # ------------------------------------------------------------------------
-# Script para me salvar tempo exportando screenshot
+# Script para me salvar tempo compartilhando imagens
 # -------------------------------------------------------------------------
 
 # [>]Como usar: "screenshot"
 
-
+azul='\033[1;34m' # Azul Claro
 amarelo='\033[1;33m' # Amarelo
 SemCor='\033[0m' # Sem Cor
 
-# ---------------------------- # confirma se o curl & scrot estam instalados na maquina
-if test -e /usr/bin/scrot ; then
-    echo -e "\n['o] *Flash!*" >&2
-else
-    echo "Dependencia faltando: apt-get install scrot" >&2      
-    apt-get install scrot -y
-    exit 1
-    fi
-
+# ---------------------------- # confirma se o netcat foi instalado na maquina
 
 if test -e /usr/bin/curl ; then
+    echo -en "${azul}[File name:]${SemCor} "
+    read -e FILE 
     echo "_______________________" >&2
 else
     echo "Dependencia faltando: apt-get install curl" >&2      
-    apt-get install curl -y
+    apt-get install netcat -y
     exit 1
     fi
 
 # ------------------------------# Exec
 
-echo -e "${amarelo}[>]Uploading Screenshot...${SemCor}" ;
-scrot -e 'curl -F "clbin=@$f" https://clbin.com' >&2 
-notify-send "Upload complete" 
-#xdg-open
+
+echo -e "${amarelo}[>]Uploading Image...${SemCor}" ; curl -F 'clbin=@'$FILE https://clbin.com
+notify-send "Upload complete
