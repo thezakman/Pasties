@@ -29,3 +29,4 @@ else
 
 
 echo -e "${amarelo}[>]Uploading Image...${SemCor}" ; curl -F 'clbin=@'$FILE https://clbin.com
+notify-send "Upload complete
